@@ -11,7 +11,6 @@ cyclistic_df <- rbind (jan_df, feb_df, mar_df)
 
 #remove individual month data frames to clear up space in the environment
 remove(jan_df, feb_df, mar_df)
-remove(cyclistic_df) #remove this comment after use this for storaging purpose!!!!!!!!!!!!!!!!!!!
 
 #create new data frame to work with and add new columns
 cyclistic_edit <- cyclistic_df
@@ -69,7 +68,7 @@ cyclistic_edit %>%
     number_of_rides = n(),  #calculates the number of rides and average duration
     average_duration = mean(ride_length_secs)) %>% #calculates the average duration
   arrange(member_casual, day_of_week) #sorts
-
+  
 #visualizing the number of rides for members and casuals
 cyclistic_edit %>%
   group_by(member_casual, day_of_week) %>%

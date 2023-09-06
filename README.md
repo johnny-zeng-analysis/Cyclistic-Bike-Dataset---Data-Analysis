@@ -12,7 +12,7 @@ Cyclistic’s finance analysts have concluded that annual members are much more 
 Prepare
 To approach this question, I will be analyzing the historical Cyclistic bike trip data for all 12 months of 2022. The data is bias-free, reliable, and collected by Cyclistic and stored on the company’s database separated by each month and year in a CSV format. For this analysis, I have saved the 12 CSV files for each month of 2022 on my local drive.
 
-The Cyclistic dataset can be found [here] (https://divvy-tripdata.s3.amazonaws.com/index.html).
+The Cyclistic dataset can be found [here](https://divvy-tripdata.s3.amazonaws.com/index.html).
 
 
 Process

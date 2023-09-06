@@ -17,5 +17,5 @@ To start, I utilize R through Posit Cloud to merge, clean, and manipulate the da
 Uploading the Cyclistic data from January 2022, February 2022, and March 2022 into Posit Cloud and  merging them into a single dataframe. I then verify that all observations are transferred to the new dataframe properly. I also add the ride_length_secs, date, month, day, year, day_of_week columns so that I can use these for my analysis. I then use the str() function for my dataframe to check if the data types of the columns are correct. I then change the ride_lengh_secs to a numeric data type so that I can run calculations on the data later on. I then clean the data by removing NA values, duplicate rows, columns that will not be used for the analysis, and values less than 0 for the ride_length_secs column.
 
 # Analysis
-
-
+With the data processing phase copmleted, I begin with my analysis focusing on how members and casuals differ when using Cyclistic bikes.
+number_of_rides_and_average_duration.JPG

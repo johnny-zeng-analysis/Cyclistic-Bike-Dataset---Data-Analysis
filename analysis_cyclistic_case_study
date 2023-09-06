@@ -21,6 +21,7 @@ cyclistic_edit$month <- format(as.Date(cyclistic_edit$date),"%m")
 cyclistic_edit$day <- format(as.Date(cyclistic_edit$date),"%D")
 cyclistic_edit$year <- format(as.Date(cyclistic_edit$date),"%Y")
 cyclistic_edit$day_of_week <- format(as.Date(cyclistic_edit$date),"%A")
+cyclistic_edit$hour <- hour(cyclistic_edit$started_at)
 
 #add a column for ride_length_secs calculation in seconds
 cyclistic_edit$ride_length_secs <- difftime(cyclistic_edit$ended_at,cyclistic_edit$started_at)
@@ -58,7 +59,7 @@ aggregate(cyclistic_edit$ride_length_secs ~ cyclistic_edit$member_casual + cycli
 #ordering the days of the week to appear in order from sunday to saturday
 cyclistic_edit$day_of_week <- ordered(cyclistic_edit$day_of_week, level=c("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"))
 
-#comparing the average ride time by each day for members vs casuals
+#comparing the average ride time by each day for members vs casuals in order from sunday to saturday
 aggregate(cyclistic_edit$ride_length_secs ~ cyclistic_edit$member_casual + cyclistic_edit$day_of_week, FUN = mean)
 
 #analyzing ridership data by type and weekday
@@ -80,7 +81,7 @@ cyclistic_edit %>%
   labs(title="Members vs Casuals", 
        subtitle = "Comparison of the Number of Rides Each Day")
 
-#visualizing average duration of rides for members and casuals
+#visualizing the average duration of rides for members and casuals
 cyclistic_edit %>%
   group_by(member_casual,day_of_week) %>%
   summarise(number_of_rides =n()
@@ -90,3 +91,13 @@ cyclistic_edit %>%
   geom_col(position="dodge") +
   labs(title="Members vs Casuals", 
        subtitle = "Comparison of the Average Duration of Rides")
+
+#visualizing the number of rides for each hour of the day for members and casuals
+cyclistic_edit %>%
+  group_by(member_casual, hour) %>%
+  summarise(number_of_rides = n(),
+            average_duration = mean(ride_length_secs)) %>%
+  arrange(member_casual, hour) %>%
+  ggplot(aes(x=hour, y=number_of_rides, fill=member_casual))+
+  geom_col(position ="dodge") + labs(title="Members vs Casuals",
+                                     subtitle ="Comparison of the number of rides for each hour of the day")

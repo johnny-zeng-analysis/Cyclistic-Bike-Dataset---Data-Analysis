@@ -1,0 +1,93 @@
+#load libraries
+library(tidyverse)
+
+#load original .csv files, a quarter years worth of data from january 2022 to march 2022
+jan_df <- read_csv("202201-divvy-tripdata.csv")
+feb_df <- read_csv("202202-divvy-tripdata.csv")
+mar_df <- read_csv("202203-divvy-tripdata.csv")
+
+#merge all of the data frames into one quarter year view
+cyclistic_df <- rbind (jan_df, feb_df, mar_df)
+
+#remove individual month data frames to clear up space in the environment
+remove(jan_df, feb_df, mar_df)
+remove(cyclistic_df) #remove this comment after use this for storaging purpose!!!!!!!!!!!!!!!!!!!
+
+#create new data frame to work with and add new columns
+cyclistic_edit <- cyclistic_df
+
+#create columns for: date, month, day, and year of each ride
+cyclistic_edit$date <- as.Date(cyclistic_edit$started_at)
+cyclistic_edit$month <- format(as.Date(cyclistic_edit$date),"%m")
+cyclistic_edit$day <- format(as.Date(cyclistic_edit$date),"%D")
+cyclistic_edit$year <- format(as.Date(cyclistic_edit$date),"%Y")
+cyclistic_edit$day_of_week <- format(as.Date(cyclistic_edit$date),"%A")
+
+#add a column for ride_length_secs calculation in seconds
+cyclistic_edit$ride_length_secs <- difftime(cyclistic_edit$ended_at,cyclistic_edit$started_at)
+
+#check data types of columns to make sure they are correct
+str(cyclistic_df)
+
+#converting ride_length_secs to numeric so that I can run calculations on the data
+cyclistic_edit$ride_length_secs <- as.numeric(cyclistic_edit$ride_length_secs)
+
+#cleaning the data
+cyclistic_edit <- na.omit(cyclistic_edit) #removing rows with NA values
+cyclistic_edit <- distinct(cyclistic_edit) #removing duplicate rows
+cyclistic_edit <- cyclistic_edit %>%
+  select(-c(ride_id, start_station_id, end_station_id, start_lat, start_lng, end_lat, end_lng)) #removing columns that have no value for the analysis
+cyclistic_edit <- cyclistic_edit[!(cyclistic_edit$ride_length_secs <=0),] #removing values less than 0 for the ride_length_secs column
+
+#conducting analysis
+mean(cyclistic_edit$ride_length_secs)
+median(cyclistic_edit$ride_length_secs)
+max(cyclistic_edit$ride_length_secs)
+min(cyclistic_edit$ride_length_secs)
+
+summary(cyclistic_edit$ride_length_secs)
+
+#comparing members and casuals
+aggregate(cyclistic_edit$ride_length_secs ~ cyclistic_edit$member_casual, FUN = mean)
+aggregate(cyclistic_edit$ride_length_secs ~ cyclistic_edit$member_casual, FUN = median)
+aggregate(cyclistic_edit$ride_length_secs ~ cyclistic_edit$member_casual, FUN = max)
+aggregate(cyclistic_edit$ride_length_secs ~ cyclistic_edit$member_casual, FUN = min)
+
+#comparing the average ride time by each day for members and casuals
+aggregate(cyclistic_edit$ride_length_secs ~ cyclistic_edit$member_casual + cyclistic_edit$day_of_week, FUN = mean)
+
+#ordering the days of the week to appear in order from sunday to saturday
+cyclistic_edit$day_of_week <- ordered(cyclistic_edit$day_of_week, level=c("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"))
+
+#comparing the average ride time by each day for members vs casuals
+aggregate(cyclistic_edit$ride_length_secs ~ cyclistic_edit$member_casual + cyclistic_edit$day_of_week, FUN = mean)
+
+#analyzing ridership data by type and weekday
+cyclistic_edit %>%
+  group_by(member_casual, day_of_week) %>% #groups by usertype and weekday
+  summarise(
+    number_of_rides = n(),  #calculates the number of rides and average duration
+    average_duration = mean(ride_length_secs)) %>% #calculates the average duration
+  arrange(member_casual, day_of_week) #sorts
+
+#visualizing the number of rides for members and casuals
+cyclistic_edit %>%
+  group_by(member_casual, day_of_week) %>%
+  summarise(number_of_rides =n()
+            ,average_duration = mean(ride_length_secs)) %>%
+  arrange(member_casual,day_of_week) %>%
+  ggplot(aes(x=day_of_week, y=number_of_rides, fill = member_casual)) +
+  geom_col(position="dodge") +
+  labs(title="Members vs Casuals", 
+       subtitle = "Comparison of the Number of Rides Each Day")
+
+#visualizing average duration of rides for members and casuals
+cyclistic_edit %>%
+  group_by(member_casual,day_of_week) %>%
+  summarise(number_of_rides =n()
+            ,average_duration = mean(ride_length_secs)) %>%
+  arrange(member_casual,day_of_week) %>%
+  ggplot(aes(x=day_of_week, y=average_duration, fill= member_casual)) +
+  geom_col(position="dodge") +
+  labs(title="Members vs Casuals", 
+       subtitle = "Comparison of the Average Duration of Rides")

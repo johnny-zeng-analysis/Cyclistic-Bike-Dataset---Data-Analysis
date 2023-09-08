@@ -26,17 +26,17 @@ This clearly shows that there is a large difference between the usage of Cyclist
 
 To show this gap better I used the ggplot package to create a visualization of the data from R.
 
-![Alt Text](number_of_rides_each_day.JPG)
+![Alt Text](number_of_rides_each_day.jpg)
 
 The graph clearly shows the overwhleming difference in usage between members and casuals for Cyclistic bikes. This graph also shows a trend of where Cyclistic bikes are used more on the weekdays. This can potentially be because poeple use Cyclistic bikes for a means of commuting to and from work or school.
 
 With another visualization, the comparison for the average ride length between members and casuals indicate that casual users tend to have a longer average ride duration compared to members.
 
-![Alt Text](number_of_rides_each_day.JPG)
+![Alt Text](number_of_rides_each_day.jpg)
 
 This graph shows a trend opposite to the number of rides visualization which led to me making another visualization that shows the number of rides for members and casuals at each hour of the day.
 
-![Alt Text](number_of_rides_each_hour.JPG)
+![Alt Text](number_of_rides_each_hour.jpg)
 
 This graph shows that there are two peaks in ride frequency for members, one beginning at 8:00 A.M., which is the time many people usually commute to work. The second peak in ride frequency is at 5:00 P.M., which is the end of the workday for many people. This graph also shows that for casuals, there seems to be an upward trend throughout the day and downward trend towards the night time. With this, we can assume that casual members do not use Cyclistic bikes for their commute to work, but rather for fun or impromptu activities. This analysis is further supported with the decline in usage after 5:00 P.M. likely due to the sun setting.
 

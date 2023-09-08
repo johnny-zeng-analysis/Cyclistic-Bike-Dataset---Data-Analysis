@@ -8,8 +8,7 @@ For this case study, I will be assuming the role of ‘Jr. Data Analyst’ at Cy
 Cyclistic’s finance analysts have concluded that annual members are much more profitable than casual riders. The director of marketing and my manager, Moreno believes that maximizing the number of annual members will be key to future growth. Moreno wants to convert the casual riders into members rather than target all-new customers. To help them complete this goal, I have been asked to find “How do annual members and casual riders use Cyclistic bikes differently?”.
 
 # Prepare
-To approach this question, I will be analyzing the historical Cyclistic bike trip data for all 12 months of 2022. The data is bias-free, reliable, and collected by Cyclistic and stored on the company’s database separated by each month and year in a CSV format. For this analysis, I have saved the 12 CSV files for each month of 2022 on my local drive.
-The Cyclistic dataset can be found [here](https://divvy-tripdata.s3.amazonaws.com/index.html).
+I will analyze Cyclistic's historical bike trip data for the first quarter of 2022. This dataset, collected by Cyclistic, is known for its reliability and lack of bias. It is stored in the company's database, with separate CSV files available for each month and year. To conduct this analysis, I have stored the 3 CSV files, each corresponding to a different month of the first quarter of 2022, on my local drive. You can access the Cyclistic dataset [here](https://divvy-tripdata.s3.amazonaws.com/index.html).
 
 # Process
 To start, I utilize R through Posit Cloud to merge, clean, and manipulate the data, preparing it for analysis. This process entails several essential steps, including:

@@ -31,7 +31,7 @@ The graph above clearly shows the overwhleming difference in usage between membe
 
 With another visualization, the comparison for the average ride length between members and casuals indicate that casual users tend to have a longer average ride duration compared to members.
 
-![Alt Text](number_of_rides_each_day.jpg)
+![Alt Text](average_duration_of_rides.jpg)
 
 The graph above shows a trend opposite to the number of rides visualization which led to me making another visualization that shows the number of rides for members and casuals at each hour of the day.
 

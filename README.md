@@ -16,7 +16,7 @@ To start, I utilize R through Posit Cloud to merge, clean, and manipulate the da
 Uploading the Cyclistic data from January 2022, February 2022, and March 2022 into Posit Cloud and  merging them into a single dataframe. I then verify that all observations are transferred to the new dataframe properly. I also add the ride_length_secs, date, month, day, year, day_of_week, and hour columns so that I can use these for my analysis. I then use the str() function for my dataframe to check if the data types of the columns are correct. I then change the ride_lengh_secs to a numeric data type so that I can run calculations on the data later on. I then clean the data by removing NA values, duplicate rows, columns that will not be used for the analysis, and values less than 0 for the ride_length_secs column.
 
 # Analysis
-With the data processing phase copmleted, I begin with my analysis focusing on how members and casuals differ when using Cyclistic bikes.
+With the data processing phase completed, I begin with my analysis focusing on how members and casuals differ when using Cyclistic bikes.
 To start, I compared the amount of rides and the average duration (in seconds) for rides between the annual members and casual riders.
 
 ![Alt Text](number_of_rides_and_average_duration.JPG)
@@ -27,7 +27,7 @@ To show this gap better I used the ggplot package to create a visualization of t
 
 ![Alt Text](number_of_rides_each_day.jpg)
 
-The graph above clearly shows the overwhleming difference in usage between members and casuals for Cyclistic bikes. This graph also shows a trend of where Cyclistic bikes are used more on the weekdays. This can potentially be because poeple use Cyclistic bikes for a means of commuting to and from work or school.
+The graph above clearly shows the overwhleming difference in usage between members and casuals for Cyclistic bikes. This graph also shows a trend of where Cyclistic bikes are used more on the weekdays. This can potentially be because people use Cyclistic bikes for a means of commuting to and from work or school.
 
 With another visualization, the comparison for the average ride length between members and casuals indicate that casual users tend to have a longer average ride duration compared to members.
 
@@ -46,4 +46,4 @@ With the data analysis I have conducted on the Cyclistic data of the members and
 Members use Cyclistic bikes much more often, which can be seen clearly with the comparison between the number of rides between members and casuals. The members average ride durations also lasted much shorter but the average ride duration were consistent through the weekday, since the members are likely using for commute to and from work. Casuals on the other hand, use Cyclistic bikes less often, but for a longer period of time. The only noticeable trend by casuals is the consistent upward trend of the number of rides until 5:00 P.M., followed by a downward trend likely due to the sun setting. This likely means that casuals use Cyclistic bikes moreso for fun and leisure activities rather than for commute to and from work.
 
 # Act
-With the data analysis I have completed on the Cyclistic data of the members and casuals, the marketing department should use strategies to convert these casuals to members. One strategy would be having some sort of membership where the usage of Cyclistic bikes are cheaper from 10:00 A.M. and 5:00 P.M.. Another strategy would be to have some sort of promotion where if two people sign up as members together there will be some sort of discount for both the members. Another marketing strategy would be to provide some sort of benefits to members that casuals would not have access to when using the bikes.
+With the data analysis I have completed on the Cyclistic data of the members and casuals, the marketing department should use strategies to convert these casuals to members. One strategy could involve offering membership options with reduced rates for Cyclistic bike usage between 10:00 A.M. and 5:00 P.M. Another approach could entail offering a promotion where two people signing up for membership together receive a discount. Additionally, a marketing strategy could involve offering exclusive benefits to members that casual riders do not have access to when using the bikes.

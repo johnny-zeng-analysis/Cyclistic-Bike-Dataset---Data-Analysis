@@ -41,7 +41,8 @@ The graph above shows a trend opposite to the number of rides visualization whic
 The graph above shows that there are two peaks in ride frequency for members, one beginning at 8:00 A.M., which is the time many people usually commute to work. The second peak in ride frequency is at 5:00 P.M., which is the end of the workday for many people. This graph also shows that for casuals, there seems to be an upward trend throughout the day and downward trend towards the night time. With this, we can assume that casual members do not use Cyclistic bikes for their commute to work, but rather for fun or impromptu activities. This analysis is further supported with the decline in usage after 5:00 P.M. likely due to the sun setting.
 
 # Share
-## How do annual members and casual riders use Cyclistic bikes differently?
+**How do annual members and casual riders use Cyclistic bikes differently?**
+
 With the data analysis I have conducted on the Cyclistic data of the members and casuals, I can make a conclusion on the difference between the members and casuals.
 Members use Cyclistic bikes much more often, which can be seen clearly with the comparison between the number of rides between members and casuals. The members average ride durations also lasted much shorter but the average ride duration were consistent through the weekday, since the members are likely using for commute to and from work. Casuals on the other hand, use Cyclistic bikes less often, but for a longer period of time. The only noticeable trend by casuals is the consistent upward trend of the number of rides until 5:00 P.M., followed by a downward trend likely due to the sun setting. This likely means that casuals use Cyclistic bikes moreso for fun and leisure activities rather than for commute to and from work.
 

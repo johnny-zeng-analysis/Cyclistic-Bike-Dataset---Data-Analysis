@@ -19,7 +19,9 @@ Uploading the Cyclistic data from January 2022, February 2022, and March 2022 in
 # Analysis
 With the data processing phase copmleted, I begin with my analysis focusing on how members and casuals differ when using Cyclistic bikes.
 To start, I compared the amount of rides and the average duration (in seconds) for rides between the annual members and casual riders.
+
 ![Alt Text](number_of_rides_and_average_duration.JPG)
+
 This clearly shows that there is a large difference between the usage of Cyclistic bikes between the members and casuals, where the casuals more than double in the average duration for rides each day of the week.
 To show this gap better I used the ggplot package to create a visualization of the data from R.
 links of the graph of comparison of number of rides between casual and members.``````````````````````````

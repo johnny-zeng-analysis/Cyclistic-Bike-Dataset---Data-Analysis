@@ -2,7 +2,7 @@
 Through the Google Data Analytics Professional Certificate course offered by Coursera, I have been learning about the six stages of the data analysis process (ask, prepare, process, analyze, share, & act), and how to use tools such as SQL, Tableau, and R to gather insights from data. With what I have learned throughout the course, I will be completing an analysis on the Cyclistic Case Study showing the process step by step.
 
 # Background
-For this case study, I will be assuming the role of ‘Jr. Data Analyst’ at Cyclistic, a bike-share company based in Chicago that offers over 6,000 bikes at 800+ docking stations spread across Chicago. They currently offer classic bikes and electric bikes for use and have two customer segments: Casuals and Members. Casuals are customers who either buy a single-trip pass or a day pass, and Members are customers who buy annual memberships. My goal is to design marketing strategies aimed at converting casual riders into annual members. I will do this by focusing on how annual members and casual riders use Cyclistic bikes differently.
+For this case study, I will be assuming the role of ‘Jr. Data Analyst’ at Cyclistic, a bike-share company based in Chicago that offers over 6,000 bikes at 800+ docking stations spread across Chicago. They currently offer classic bikes and electric bikes for use and have two customer segments: Casuals and Members. Casuals are customers who either buy a single-trip pass or a day pass, and Members are customers who buy annual memberships. My goal is to design marketing strategies aimed at converting casual riders into annual members. I will do this by focusing on finding how annual members and casual riders use Cyclistic bikes differently.
 
 # Ask
 Cyclistic’s finance analysts have concluded that annual members are much more profitable than casual riders. The director of marketing and my manager, Moreno believes that maximizing the number of annual members will be key to future growth. Moreno wants to convert the casual riders into members rather than target all-new customers. To help them complete this goal, I have been asked to find “How do annual members and casual riders use Cyclistic bikes differently?”.
@@ -22,23 +22,23 @@ To start, I compared the amount of rides and the average duration (in seconds) f
 
 ![Alt Text](number_of_rides_and_average_duration.JPG)
 
-This clearly shows that there is a large difference between the usage of Cyclistic bikes between the members and casuals, where the casuals more than double in the average duration for rides each day of the week.
+The graph above clearly shows that there is a large difference between the usage of Cyclistic bikes between the members and casuals, where the casuals more than double in the average duration for rides each day of the week.
 
 To show this gap better I used the ggplot package to create a visualization of the data from R.
 
 ![Alt Text](number_of_rides_each_day.jpg)
 
-The graph clearly shows the overwhleming difference in usage between members and casuals for Cyclistic bikes. This graph also shows a trend of where Cyclistic bikes are used more on the weekdays. This can potentially be because poeple use Cyclistic bikes for a means of commuting to and from work or school.
+The graph above clearly shows the overwhleming difference in usage between members and casuals for Cyclistic bikes. This graph also shows a trend of where Cyclistic bikes are used more on the weekdays. This can potentially be because poeple use Cyclistic bikes for a means of commuting to and from work or school.
 
 With another visualization, the comparison for the average ride length between members and casuals indicate that casual users tend to have a longer average ride duration compared to members.
 
 ![Alt Text](number_of_rides_each_day.jpg)
 
-This graph shows a trend opposite to the number of rides visualization which led to me making another visualization that shows the number of rides for members and casuals at each hour of the day.
+The graph above shows a trend opposite to the number of rides visualization which led to me making another visualization that shows the number of rides for members and casuals at each hour of the day.
 
 ![Alt Text](number_of_rides_each_hour.jpg)
 
-This graph shows that there are two peaks in ride frequency for members, one beginning at 8:00 A.M., which is the time many people usually commute to work. The second peak in ride frequency is at 5:00 P.M., which is the end of the workday for many people. This graph also shows that for casuals, there seems to be an upward trend throughout the day and downward trend towards the night time. With this, we can assume that casual members do not use Cyclistic bikes for their commute to work, but rather for fun or impromptu activities. This analysis is further supported with the decline in usage after 5:00 P.M. likely due to the sun setting.
+The graph above shows that there are two peaks in ride frequency for members, one beginning at 8:00 A.M., which is the time many people usually commute to work. The second peak in ride frequency is at 5:00 P.M., which is the end of the workday for many people. This graph also shows that for casuals, there seems to be an upward trend throughout the day and downward trend towards the night time. With this, we can assume that casual members do not use Cyclistic bikes for their commute to work, but rather for fun or impromptu activities. This analysis is further supported with the decline in usage after 5:00 P.M. likely due to the sun setting.
 
 # Share
 ## How do annual members and casual riders use Cyclistic bikes differently?
